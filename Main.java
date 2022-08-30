@@ -80,8 +80,14 @@ class MortageCalculator {
     // * Step 3: Implement the Plan in Code (Solve the Problem)
     public double mortageCalculator() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter Principal: ");
-        int principal = scanner.nextInt();
+        int principal = 0;
+        while (true) {
+            System.out.print("Enter Principal: ");
+            principal = scanner.nextInt();
+            if (principal >= 1000 && principal <= 1_000_000)
+                break;
+            System.out.println("Enter a value between 1000 and 1,000,000");
+        }
 
         System.out.print("Enter Interest Rate: ");
         float annualInterestRate = scanner.nextFloat();
